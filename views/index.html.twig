@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Doctor Office</title>
+</head>
+<body>
+    <h1>Add your doctor to our list!</h1>
+    <form class ="submit" action="/add_doctor" method="post">
+        <label for="name">Doctor's Name</label>
+        <input type="text" name="name">
+        <label for="special">Doctor's Specialty</label>
+        <input type="text" name="special">
+        <button type="submit"> Click here to submit </button>
+    </form>
+    <h1>Add your patient to our list!</h1>
+    <form class="submit" action="/add_patient" method="post">
+        <label for="name">Patient's Name</label>
+        <input type="text" name="name">
+        <label for="birthdate">Patient's Birthdate</label>
+        <input type="date" name="birthdate">
+        <button type="submit"> Click here to submit </button>
+    </form>
+    <form action="/everyone" method = "get">
+    <button type="submit" name="button">LOOK AT ALL THE THINGS</button>
+    </form>
+</body>
+</html>

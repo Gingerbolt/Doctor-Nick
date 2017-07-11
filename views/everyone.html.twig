@@ -1,0 +1,38 @@
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title></title>
+</head>
+    <body>
+        <h1>Match doctors to patients!</h1>
+        <h2>Doctors here!</h2>
+        {% for doctor in doctors %}
+        <div class="radio">
+            <label>
+            <input type="radio" name="doctor_select" value = '{{ doctor.getID }}'>{{ doctor.getName }}
+            </label>
+        </div>
+        {% endfor %}
+        <h2>Patients here!</h2>
+        {% for patient in patients %}
+        <div class="radio">
+            <label>
+            <input type="radio" name="patient_select">{{ patient.getName }}
+            </label>
+        </div>
+        {% endfor %}
+        <br>
+        <form action="/associate" method = "post">
+        <button type="submit" name="button">Add doctor/patient relationship</button>
+        </form>
+        <br>
+        <form action="/" method = "get">
+        <button type="submit" name="button">Go home</button>
+        </form>
+        <br>
+        <form action="/purge" method = "get">
+        <button type="submit" name="button">REMOVE ALL THE STUFF</button>
+        </form>
+
+    </body>
+</html>
